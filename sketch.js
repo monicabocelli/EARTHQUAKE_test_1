@@ -10,14 +10,11 @@ var value = 0;  //starting value of earthquake
     
 
 function setup(){
-    createCanvas(400, 700);
+    createCanvas(400, 400);
     
     //create objects
-    for (var i = 0; i < value; i++){
+    for (var i = 0; i < value*5; i++){
         dots.push(new QuakeDots());
-       
-        
-        
     }
     
    // image(img, 0, 0);
@@ -33,16 +30,23 @@ function draw(){
     
     deviceShaken();
     //CREATE THE ELLIPSE AREA
+    var x = width/2;
+    var y = height/2;
+    var r = value; 
     
-   // }
-    QuakeDots();
+    noFill();
+    stroke(0);
+    strokeWeight(1);
+    ellipse (x, y, r, r);
+    
+    //draw dots and given methods (actions)
     noStroke();
     fill(0);
-    for (var i = 0; i < value; i++){
+    for (var i = 0; i < value*5; i++){
         dots[i].move();
         dots[i]. display();
-    
-/*} else if(stato3 == "release"){
+    }
+ /*}else if(stato3 == "release"){
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
     textSize(22);
@@ -53,43 +57,28 @@ function draw(){
     //***** compito due: recoplare la info, e anche fare le imagini, y fare la scala di grade di earthquake
    */ 
    //MAGNITUDE TEXT 
-    
-    
-//}
-   // il click to TRY AGAIN
-    
-}
-
-
-function deviceShaken(){
-        
-    value = (accelerationX + accelerationY + accelerationZ)/10;
-    magnitude = map(value, 30, 1000, 0, 10);
-    
-    var x = width/2;
-    var y = height/2;
-    var r = value/2; 
-    
-    noFill();
-    stroke(0);
-    strokeWeight(1);
-    ellipse (x, y, r, r);
-    
-    
-    
-    //draw dots and given methods (actions)
-    
-    
     textFont('Inconsolata');
     textSize(12);
     textAlign(CENTER);
     textStyle(NORMAL);
     text("Magnitude", width - width/6, height/3.5);
-    textSize(32);
+    textSize(15);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(magnitude, width - width/6, height/3);
+    text(value, width - width/6, height/3);
     
+}
+   // il click to TRY AGAIN
+    
+
+
+
+function deviceShaken(){
+    QuakeDots();    
+    value = (accelerationX * accelerationY * accelerationZ)/3;
+    magnitude = map(value, 0, 1000, 0, 10);
+    
+    text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
 }
 
 
@@ -112,7 +101,7 @@ this.display = function(){
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
 };
 
-}
+
     
 /*    
 function touchStarted(){
@@ -121,4 +110,4 @@ function touchStarted(){
  
 */
     
-
+}
