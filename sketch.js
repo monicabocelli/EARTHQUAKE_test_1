@@ -10,10 +10,10 @@ var value = 0;  //starting value of earthquake
     
 
 function setup(){
-    createCanvas(displayWidth, displayHeight);
+    createCanvas(windowWidth, windowHeight);
     
     //create objects
-    for (var i = 0; i < value*8; i++){
+    for (var i = 0; i < value*2; i++){
         dots.push(new QuakeDots());
     }
     
@@ -30,21 +30,7 @@ function draw(){
     
     deviceShaken();
     //CREATE THE ELLIPSE AREA
-    var x = width/2;
-    var y = height/2;
-    var r = value; 
     
-    noFill();
-    stroke(0);
-    strokeWeight(1);
-    ellipse (x, y, r, r);
-    
-    //draw dots and given methods (actions)
-    noStroke();
-    fill(0);
-    for (var i = 0; i < value*8; i++){
-        dots[i].move();
-        dots[i]. display();
     }
 /*} else if(stato3 == "release"){
     
@@ -67,8 +53,24 @@ function draw(){
 
 function deviceShaken(){
     QuakeDots();    
-    value = (accelerationX * accelerationY * accelerationZ)/3;
+    value = (accelerationX + accelerationY + accelerationZ)/3;
     magnitude = map(value, 30, 1000, 0, 10);
+    
+    var x = width/2;
+    var y = height/2;
+    var r = value; 
+    
+    noFill();
+    stroke(0);
+    strokeWeight(1);
+    ellipse (x, y, r, r);
+    
+    //draw dots and given methods (actions)
+    noStroke();
+    fill(0);
+    for (var i = 0; i < value*2; i++){
+        dots[i].move();
+        dots[i]. display();
     
     textFont('Inconsolata');
     textSize(12);
