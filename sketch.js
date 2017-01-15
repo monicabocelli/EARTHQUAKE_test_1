@@ -57,15 +57,7 @@ function draw(){
     //***** compito due: recoplare la info, e anche fare le imagini, y fare la scala di grade di earthquake
    */ 
    //MAGNITUDE TEXT 
-    textFont('Inconsolata');
-    textSize(12);
-    textAlign(CENTER);
-    textStyle(NORMAL);
-    text("Magnitude", width - width/6, height/3.5);
-    textSize(32);
-    textAlign(CENTER);
-    textStyle(BOLD);
-    text(value, width - width/6, height/3);
+    
     
 //}
    // il click to TRY AGAIN
@@ -78,7 +70,15 @@ function deviceShaken(){
     value = (accelerationX * accelerationY * accelerationZ)/3;
     magnitude = map(value, 30, 1000, 0, 10);
     
-    text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
+    textFont('Inconsolata');
+    textSize(12);
+    textAlign(CENTER);
+    textStyle(NORMAL);
+    text("Magnitude", width - width/6, height/3.5);
+    textSize(32);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    text(magnitude, width - width/6, height/3);
 }
 
 
