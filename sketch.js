@@ -10,7 +10,7 @@ var value = 0;  //starting value of earthquake
     
 
 function setup(){
-    createCanvas(displayWidth, displayHeight);
+    createCanvas(500, 800);
     
     //create objects
     for (var i = 0; i < value*5; i++){
@@ -65,7 +65,7 @@ function draw(){
     textSize(15);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(value, width - width/6, height/3);
+    text(magnitude, width - width/6, height/3);
     
 }
    // il click to TRY AGAIN
@@ -78,7 +78,7 @@ function deviceShaken(){
     value = accelerationX * accelerationY * accelerationZ;
     magnitude = map(value, 0, 1000, 0, 10);
     
-    text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
+   // text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
 }
 
 
