@@ -10,10 +10,10 @@ var value = 0;  //starting value of earthquake
     
 
 function setup(){
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(400, 700);
     
     //create objects
-    for (var i = 0; i < value*2; i++){
+    for (var i = 0; i < value; i++){
         dots.push(new QuakeDots());
     }
     
@@ -52,8 +52,9 @@ function draw(){
 
 
 function deviceShaken(){
-    QuakeDots();    
-    value = (accelerationX + accelerationY + accelerationZ)/3;
+        
+   // value = (accelerationX + accelerationY + accelerationZ)/3;
+    value = accelerationX ;
     magnitude = map(value, 30, 1000, 0, 10);
     
     var x = width/2;
@@ -65,10 +66,11 @@ function deviceShaken(){
     strokeWeight(1);
     ellipse (x, y, r, r);
     
+    QuakeDots();
     //draw dots and given methods (actions)
     noStroke();
     fill(0);
-    for (var i = 0; i < value*2; i++){
+    for (var i = 0; i < value; i++){
         dots[i].move();
         dots[i]. display();
     
