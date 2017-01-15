@@ -31,7 +31,7 @@ function draw(){
     deviceShaken();
     //CREATE THE ELLIPSE AREA
     
-    }
+   // }
 /*} else if(stato3 == "release"){
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
