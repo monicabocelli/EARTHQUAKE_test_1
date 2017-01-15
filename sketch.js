@@ -1,4 +1,4 @@
-//var dots = [];
+var dots = [];
 
 var value = 0;  //starting value of earthquake
 
@@ -12,10 +12,10 @@ var value = 0;  //starting value of earthquake
 function setup(){
     createCanvas(400, 700);
     
-    /*create objects
+    //create objects
     for (var i = 0; i < value; i++){
         dots.push(new QuakeDots());
-    */    
+       
         
         
     }
@@ -35,6 +35,13 @@ function draw(){
     //CREATE THE ELLIPSE AREA
     
    // }
+    QuakeDots();
+    noStroke();
+    fill(0);
+    for (var i = 0; i < value; i++){
+        dots[i].move();
+        dots[i]. display();
+    
 /*} else if(stato3 == "release"){
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
@@ -69,14 +76,9 @@ function deviceShaken(){
     ellipse (x, y, r, r);
     
     
-    /*
-    QuakeDots();
+    
     //draw dots and given methods (actions)
-    noStroke();
-    fill(0);
-    for (var i = 0; i < value; i++){
-        dots[i].move();
-        dots[i]. display();
+    
     
     textFont('Inconsolata');
     textSize(12);
@@ -87,10 +89,10 @@ function deviceShaken(){
     textAlign(CENTER);
     textStyle(BOLD);
     text(magnitude, width - width/6, height/3);
-    */
+    
 }
 
-/*
+
 function QuakeDots(){
     
     var d = dist(width/2,height/2,width/2+value/2,height/2);
@@ -110,7 +112,7 @@ this.display = function(){
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
 };
 
-*/
+}
     
 /*    
 function touchStarted(){
@@ -119,4 +121,4 @@ function touchStarted(){
  
 */
     
-//}
+
