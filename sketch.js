@@ -4,13 +4,13 @@ var value = 0;  //starting value of earthquake
 
 //var img;
 
-var stato1 = "cover"
-var stato2 = "shake"
-var stato3 = "release"
+//var stato1 = "cover"
+//var stato2 = "shake"
+//var stato3 = "release"
     
 
 function setup(){
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(displayWidth, displayHeight);
     
     //create objects
     for (var i = 0; i < value*8; i++){
@@ -22,11 +22,11 @@ function setup(){
 
 function draw(){
      background(204);
-     if (stato1 == "cover"){
+   /*  if (stato1 == "cover"){
      vedere immagine con text
      }
     
-     else if (stato2 == "shake"){
+     else if (stato2 == "shake"){*/
     
     deviceShaken();
     //CREATE THE ELLIPSE AREA
@@ -46,7 +46,7 @@ function draw(){
         dots[i].move();
         dots[i]. display();
     }
-} /*else if(stato3 == "release"){
+/*} else if(stato3 == "release"){
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
     textSize(22);
@@ -67,7 +67,7 @@ function draw(){
     textStyle(BOLD);
     text(value, width - width/6, height/3);
     
-}
+//}
    // il click to TRY AGAIN
     
 }
