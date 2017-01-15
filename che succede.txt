@@ -1,0 +1,6 @@
+si vede solo lo sfondo grigio, anche quando shake
+
+su cell stefano invece:
+Fa solo il pallino...  
+Ogni volta che ricarico il link ha una dimensione diversa
+E all'inizio fa numeri a caso che poi scompaiono
