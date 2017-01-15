@@ -75,7 +75,7 @@ function draw(){
 
 function deviceShaken(){
     QuakeDots();    
-    value = (accelerationX * accelerationY * accelerationZ)/3;
+    value = accelerationX * accelerationY * accelerationZ;
     magnitude = map(value, 0, 1000, 0, 10);
     
     text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
