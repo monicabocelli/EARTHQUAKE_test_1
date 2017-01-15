@@ -10,7 +10,7 @@ var value = 0;  //starting value of earthquake
     
 
 function setup(){
-    createCanvas(400, 400);
+    createCanvas(displayWidth, displayHeight);
     
     //create objects
     for (var i = 0; i < value*5; i++){
