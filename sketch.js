@@ -1,4 +1,4 @@
-var dots = [];
+//var dots = [];
 
 var value = 0;  //starting value of earthquake
 
@@ -12,9 +12,12 @@ var value = 0;  //starting value of earthquake
 function setup(){
     createCanvas(400, 700);
     
-    //create objects
+    /*create objects
     for (var i = 0; i < value; i++){
         dots.push(new QuakeDots());
+    */    
+        
+        
     }
     
    // image(img, 0, 0);
@@ -53,19 +56,20 @@ function draw(){
 
 function deviceShaken(){
         
-   // value = (accelerationX + accelerationY + accelerationZ)/3;
-    value = accelerationX ;
+    value = (accelerationX + accelerationY + accelerationZ)/10;
     magnitude = map(value, 30, 1000, 0, 10);
     
     var x = width/2;
     var y = height/2;
-    var r = value; 
+    var r = value/2; 
     
     noFill();
     stroke(0);
     strokeWeight(1);
     ellipse (x, y, r, r);
     
+    
+    /*
     QuakeDots();
     //draw dots and given methods (actions)
     noStroke();
@@ -83,9 +87,10 @@ function deviceShaken(){
     textAlign(CENTER);
     textStyle(BOLD);
     text(magnitude, width - width/6, height/3);
+    */
 }
 
-
+/*
 function QuakeDots(){
     
     var d = dist(width/2,height/2,width/2+value/2,height/2);
@@ -105,7 +110,7 @@ this.display = function(){
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
 };
 
-
+*/
     
 /*    
 function touchStarted(){
@@ -114,4 +119,4 @@ function touchStarted(){
  
 */
     
-}
+//}
